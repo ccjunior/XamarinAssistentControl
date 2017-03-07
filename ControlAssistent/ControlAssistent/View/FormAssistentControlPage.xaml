@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ControlAssistent.View.FormAssistentControlPage"
+             xmlns:local="clr-namespace:ControlAssistent.View.FormAssistentControlPage">
+
+  
+    
+    <StackLayout>
+        <Button Text="Carregar diretorio" Command="{Binding LoadDirectoryCommand}"></Button>
+        <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+        <ListView ItemsSource="{Binding Students}" x:Name="lvStudents">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+
+                    <ImageCell TextColor="{Binding Average}" Text="{Binding Name}" Detail="{Binding Average}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            
+        </ListView>
+
+    </StackLayout>
+</ContentPage>
